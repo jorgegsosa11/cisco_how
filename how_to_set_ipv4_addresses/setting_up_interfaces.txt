@@ -1,0 +1,54 @@
+
+Configure the appropriate IP addresses on R1's interfaces, and enable the interfaces
+    Configure appropriate interface descriptions
+
+
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int g0/0
+R1(config-if)#ip address 15.255.255.254 255.0.0.0
+R1(config-if)#no shutdown
+
+R1(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+R1(config-if)#do show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     15.255.255.254  YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES unset  administratively down down 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+R1(config-if)#exit
+R1(config)#int g0/1
+R1(config-if)#ip address 182.98.255.254 255.255.0.0
+R1(config-if)#no shutdown
+
+R1(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+R1(config-if)#do show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     15.255.255.254  YES manual up                    up 
+GigabitEthernet0/1     182.98.255.254  YES manual up                    up 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+R1(config-if)#exit
+R1(config)#int g0/2
+R1(config-if)#ip address 201.191.20.254 255.255.255.0
+R1(config-if)#no shutdown
+
+R1(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+R1(config-if)#do show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     15.255.255.254  YES manual up                    up 
+GigabitEthernet0/1     182.98.255.254  YES manual up                    up 
+GigabitEthernet0/2     201.191.20.254  YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down

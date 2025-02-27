@@ -1,0 +1,10 @@
+R1(config)#do sh running-config
+R1(config)#exit
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R1#sh startup-config
